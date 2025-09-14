@@ -1,6 +1,7 @@
 :root{
     --main-color: #fffddd;
-    --secondary-color: rgba(255, 252, 235, 0.95);
+    --secondary-color: rgba(255, 253, 242, 0.95);
+    --tertiary-color: rgb(210, 245, 255);
     --main-text-color: #171717;
     --secondary-text-color: #fffce1;
     --hover-text-color: #000000da;
@@ -18,6 +19,14 @@ body{
     font-family: var(--main-font);
     padding: 0;
     margin: 0;
+}
+
+h1, h2, p{
+    margin: 0;
+}
+
+.hidden{
+    display: none;
 }
 
 .scrolled .navbar-border{
@@ -41,7 +50,6 @@ body{
     justify-content: center;
     height: 0px;
     z-index: 2000;
-    scale: 1.2;
 }
 
 .navbar-border{
@@ -143,10 +151,81 @@ body{
 
 #exploreLink:hover{
     text-decoration: underline;
+    text-underline-offset: 10px;
 }
 
 
+.flex-left{
+    display: flex;
+    justify-content: start;
+}
+
 #dashboard{
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
     width: 100vw;
+    font-family: var(--secondary-font);
+    background-color: var(--tertiary-color);
+}
+
+#dashboard h1{
+    margin-top: 120px;
+    font-size: 50px;
+}
+
+#tileContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 50px;
+    column-gap: 100px;
+    margin-bottom: 50px
+}
+
+.tile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+.tile:hover{
+    scale: 1.02;
+    box-shadow: 5px 10px rgba(128, 128, 128, 0.125);
+}
+
+.tile h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.tile p{
+    font-size: 24px;
+    width: 300px;
+    text-align: center;
+}
+
+.tile-img{
+    font-size: 90px !important;
+}
+
+
+@media (min-width: 2000px) {
+    #dashboard{
+        height: 100%;
+    }
+
+    #tileContainer{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: none;
+    }
+
 }

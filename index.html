@@ -2,6 +2,10 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/styles.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     </head>
 
     <body class = "">
@@ -10,10 +14,10 @@
                 <nav class = "navbar">
                     <a href = "" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
                     <ul class = "navbar-list">
-                        <li><a href = "">Family Tree</a></li>
                         <li><a href = "">Gallery</a></li>
                         <li><a href = "">Calendar</a></li>
-                        <li><a href = "">Account</a></li>
+                        <li><a href = "">Family Tree</a></li>
+                        <li><a href = "account.html">Account</a></li>
                     </ul>
                 </nav>
             </div>
@@ -27,12 +31,34 @@
             </section>
 
             <section id = "dashboard">
-                <div id = "tiles">
-
+                <div class = "flex-left">
+                    <h1>Family Dashboard</h1>
+                </div>
+                <div id = "tileContainer">
+                    <div class = "tile">
+                        <p class = "tile-img">📷</p>
+                        <h2>Gallery</h2>
+                        <p>View or add photos in our family gallery</p>
+                    </div>
+                    <div class = "tile">
+                        <p class = "tile-img">📅</p>
+                        <h2>Calendar</h2>
+                        <p>See when everyone is busy and add your agenda so others can see</p>
+                    </div>
+                    <div class = "tile">
+                        <p class = "tile-img">🌳</p>
+                        <h2>Family Tree</h2>
+                        <p>Take a look at our extended family</p>
+                    </div>
+                    <div class = "tile">
+                        <p class = "tile-img">👤</p>
+                        <h2>Account</h2>
+                        <p>Login to see what we're up to, or manage your account</p>
+                    </div>
                 </div>
             </section>
         </main>
 
-        <script src = "scripts/main.js"></script>
+        <script src = "scripts/home.js"></script>
     </body>
 </html>

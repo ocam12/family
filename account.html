@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Account</title>
+        <link rel = "stylesheet" href = "styles/styles.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <div class = "navbar-container">
+            <div class = "navbar-border">
+                <nav class = "navbar">
+                    <a href = "" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
+                    <ul class = "navbar-list">
+                        <li><a href = "">Gallery</a></li>
+                        <li><a href = "">Calendar</a></li>
+                        <li><a href = "">Family Tree</a></li>
+                        <li><a href = "account.html">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <section id = "accountMenus">
+            <div id = "signUpMenu" class = "">
+                <h2>Create Your Account</h2>
+                <div class = "account-div">
+                    <div class = "account-inputs-div">
+                        <input id = "signupEmail" type="email" placeholder="Email">
+                        <input id = "signupPassword" type="password" placeholder="Password">
+                    </div>
+                    <button id = "signupButton">Sign Up</button>
+                </div>
+                <div id = "messageBox">
+                    <p id = "messageP"></p>
+                </div>
+                <button id = "gotAccountButton">Got Account? Login Here</button>
+            </div>
+
+            <div id = "logInMenu" class = "">
+                <h2>Login</h2>
+                <div class = "account-div">
+                    <div class = "account-inputs-div">
+                        <input id="loginEmail" type="email" placeholder="Email">
+                        <input id="loginPassword" type="password" placeholder="Password">
+                    </div>
+                    <button id = "loginButton">Log In</button>
+                </div>
+                <button id = "createAccountButton">Create Account</button>
+            </div>
+
+            <div id = "loggedInMenu" class = "">
+                <h2>You Are Logged In</h2>
+                <button id = "signOutButton">Sign out</button>
+            </div>
+        </section>
+
+        <script type = "module" src = "scripts/firebaseAuth.js"></script>
+    </body>
+</html>
