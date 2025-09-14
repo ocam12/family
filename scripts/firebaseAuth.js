@@ -3,6 +3,7 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/fi
 import { initialiseSignInPage } from "./signIn.js";
 import { switchToLoggedIn } from "./signIn.js";
 import { switchToLogIn } from "./signIn.js";
+import { addCheckToLockedLinks } from "./common.js";
 
 //export the current user as an object so it can be imported safely
 export const authState = {
@@ -22,4 +23,5 @@ onAuthStateChanged(auth, (user) => {        //changes current user when logs in
         if (inAccountHTML) switchToLogIn();
     }
     if (inAccountHTML) initialiseSignInPage();
+    addCheckToLockedLinks();
 });
