@@ -1,6 +1,8 @@
 import { auth } from "./firebaseConfig.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import { initialiseSignInPage } from "./signIn.js";
+import { switchToLoggedIn } from "./signIn.js";
+import { switchToLogIn } from "./signIn.js";
 
 //export the current user as an object so it can be imported safely
 export const authState = {
@@ -9,12 +11,15 @@ export const authState = {
 
 //track the currently logged-in user across pages
 onAuthStateChanged(auth, (user) => {        //changes current user when logs in
+    const inAccountHTML = (window.location.pathname === '/account.html');
     if (user) {
         authState.currentUser = user;
         console.log("User is signed in:", authState.currentUser.email);
+        if (inAccountHTML) switchToLoggedIn();
     } else {
         authState.currentUser = null;
         console.log("No user signed in");
+        if (inAccountHTML) switchToLogIn();
     }
-    initialiseSignInPage();
+    if (inAccountHTML) initialiseSignInPage();
 });

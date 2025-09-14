@@ -12,12 +12,13 @@
         <div class = "navbar-container">
             <div class = "navbar-border">
                 <nav class = "navbar">
-                    <a href = "" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
+                    <a href = "index.html" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
                     <ul class = "navbar-list">
-                        <li><a href = "">Gallery</a></li>
-                        <li><a href = "">Calendar</a></li>
-                        <li><a href = "">Family Tree</a></li>
-                        <li><a href = "account.html">Account</a></li>
+                        <li><a href = "index.html">Home</a></li>
+                        <li><a href = "" class = "locked-link">Gallery</a></li>
+                        <li><a href = "" class = "locked-link">Calendar</a></li>
+                        <li><a href = "" class = "locked-link">Family Tree</a></li>
+                        <li><a href = "account.html" id = "accountNavLink">Account</a></li>
                     </ul>
                 </nav>
             </div>
@@ -35,30 +36,30 @@
                     <h1>Family Dashboard</h1>
                 </div>
                 <div id = "tileContainer">
-                    <div class = "tile">
+                    <a class = "tile locked-link" href = "account.html">
                         <p class = "tile-img">📷</p>
                         <h2>Gallery</h2>
                         <p>View or add photos in our family gallery</p>
-                    </div>
-                    <div class = "tile">
+                    </a>
+                    <a class = "tile locked-link" href = "account.html">
                         <p class = "tile-img">📅</p>
                         <h2>Calendar</h2>
                         <p>See when everyone is busy and add your agenda so others can see</p>
-                    </div>
-                    <div class = "tile">
+                    </a>
+                    <a class = "tile locked-link" href = "">
                         <p class = "tile-img">🌳</p>
                         <h2>Family Tree</h2>
                         <p>Take a look at our extended family</p>
-                    </div>
-                    <div class = "tile">
+                    </a>
+                    <a id = "accountTile" class = "tile" href = "account.html">
                         <p class = "tile-img">👤</p>
                         <h2>Account</h2>
                         <p>Login to see what we're up to, or manage your account</p>
-                    </div>
+                    </a>
                 </div>
             </section>
         </main>
 
-        <script src = "scripts/home.js"></script>
+        <script type = "module" src = "scripts/home.js"></script>
     </body>
 </html>

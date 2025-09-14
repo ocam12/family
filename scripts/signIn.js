@@ -72,10 +72,10 @@ export const initialiseSignInPage = async () => {
     if (loginbutton){addEvent(loginbutton, 'click', loginPressed, []);}
 
     const createAccountButton = document.getElementById('createAccountButton');
-    //if (createAccountButton){addEvent(createAccountButton, 'click', switchToSignUp, []);}
+    if (createAccountButton){addEvent(createAccountButton, 'click', switchToSignUp, []);}
 
     const gotAccountButton = document.getElementById('gotAccountButton');
-    //if (gotAccountButton){addEvent(gotAccountButton, 'click', switchToLogIn, []);}
+    if (gotAccountButton){addEvent(gotAccountButton, 'click', switchToLogIn, []);}
 
     const signupEmail = document.getElementById('signupEmail');
     if (signupEmail){addEvent(signupEmail, 'input', emailErrors, [signupEmail]);}
@@ -87,4 +87,34 @@ export const initialiseSignInPage = async () => {
     if (signOutButton){
         addEvent(signOutButton, 'click', logout, []);
     }
+}
+
+const switchToSignUp = () => {
+    getSignUpMenu().classList.remove('hidden');
+    getLogInMenu().classList.add('hidden');
+    getLoggedInMenu().classList.add('hidden');
+}
+
+export const switchToLogIn = () => {
+    getSignUpMenu().classList.add('hidden');
+    getLogInMenu().classList.remove('hidden');
+    getLoggedInMenu().classList.add('hidden');
+}
+
+export const switchToLoggedIn = () => {
+    getSignUpMenu().classList.add('hidden');
+    getLogInMenu().classList.add('hidden');
+    getLoggedInMenu().classList.remove('hidden');
+}
+
+const getSignUpMenu = () => {
+    return document.getElementById('signUpMenu');
+}
+
+const getLogInMenu = () => {
+    return document.getElementById('logInMenu');
+}
+
+const getLoggedInMenu = () => {
+    return document.getElementById('loggedInMenu');
 }

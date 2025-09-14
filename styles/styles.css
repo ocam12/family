@@ -1,7 +1,11 @@
+@import url('account.css');
+
 :root{
     --main-color: #fffddd;
     --secondary-color: rgba(255, 253, 242, 0.95);
-    --tertiary-color: rgb(210, 245, 255);
+    --tertiary-color-blue: rgb(210, 245, 255);
+    --tertiary-color-sand: rgb(255, 241, 165);
+    --tertiary-hover-color: rgb(232, 220, 149);
     --main-text-color: #171717;
     --secondary-text-color: #fffce1;
     --hover-text-color: #000000da;
@@ -167,7 +171,7 @@ h1, h2, p{
     gap: 70px;
     width: 100vw;
     font-family: var(--secondary-font);
-    background-color: var(--tertiary-color);
+    background-color: var(--tertiary-color-blue);
 }
 
 #dashboard h1{
@@ -193,6 +197,8 @@ h1, h2, p{
     height: 500px;
     border-radius: 20px;
     background-color: var(--secondary-color);
+    color: var(--main-text-color);
+    text-decoration: none;
     transition: 0.1s ease;
     cursor: pointer;
 }
