@@ -4,24 +4,26 @@
         <link rel="stylesheet" href="styles/styles.css">
     </head>
 
-    <body>
-        <div class = "navbar-wrapper">
-            <nav class = "navbar">
-                <a href = "" class = "navbar-logo"><img src = "img/young-family-crest.png"><p>The Youngs</p></a>
-                <ul class = "navbar-list">
-                    <li><a href = "">Family Tree</a></li>
-                    <li><a href = "">Gallery</a></li>
-                    <li><a href = "">Calendar</a></li>
-                    <li><a href = "">Account</a></li>
-                </ul>
-            </nav>
+    <body class = "">
+        <div class = "navbar-container">
+            <div class = "navbar-border">
+                <nav class = "navbar">
+                    <a href = "" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
+                    <ul class = "navbar-list">
+                        <li><a href = "">Family Tree</a></li>
+                        <li><a href = "">Gallery</a></li>
+                        <li><a href = "">Calendar</a></li>
+                        <li><a href = "">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
         <main id = "main-section">
             <section id = "homeImage">
-
-            </section>
-            <section id = "hero">
-                <h1>The Young Family</h1>
+                <div id = "homeTextContainer">
+                    <h1 id = "homeTitle">The Youngs</h1>
+                    <a href = "#dashboard" id = "exploreLink">Stay Up To Date ⤵</a>
+                </div>
             </section>
 
             <section id = "dashboard">
@@ -30,5 +32,7 @@
                 </div>
             </section>
         </main>
+
+        <script src = "scripts/main.js"></script>
     </body>
 </html>

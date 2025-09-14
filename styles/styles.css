@@ -1,11 +1,16 @@
 :root{
     --main-color: #fffddd;
-    --secondary-color: #ffffff;
+    --secondary-color: rgba(255, 252, 235, 0.95);
     --main-text-color: #171717;
+    --secondary-text-color: #fffce1;
     --hover-text-color: #000000da;
 
     --main-font: Arial, Helvetica, sans-serif;
     --secondary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body{
@@ -15,35 +20,59 @@ body{
     margin: 0;
 }
 
-.navbar-wrapper{
+.scrolled .navbar-border{
+    width: 80px;
+    background-size: 80%;
+}
+
+.scrolled .navbar{
+    width: 50px;
+}
+
+.scrolled .navbar-logo{
+    position: relative;
+    right: 6px;
+}
+
+.navbar-container{
     position: sticky;
-    top: 0;
-    background-image: url(../img/seamless-pattern-of-scottish-tartan-plaid-repeatable-background-with-check-fabric-texture-backdrop-striped-textile-print-vector.jpg);
-    background-repeat: repeat;
-    background-size: 15%;
-    height: 108px;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    height: 0px;
     z-index: 2000;
+    scale: 1.2;
+}
+
+.navbar-border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/seamless-pattern-of-scottish-tartan-plaid-repeatable-background-with-check-fabric-texture-backdrop-striped-textile-print-vector.jpg);
+    background-size: 15%;
+    border-radius: 100px;
+    width: 610px;
+    height: 75px;
 }
 
 .navbar{
+    padding-left: 20px;
     display: flex;
-    justify-content: center;
-    height: 100px;
+    justify-content: start;
+    align-items: center;
+    width: 580px;
+    height: 65px;
+    border-radius: 100px;
     background-color: var(--secondary-color);
+    overflow: hidden;
+}
+
+.navbar-border, .navbar {
+    transition: width 0.8s ease, height 0.5s ease;
 }
 
 .navbar-logo{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    height: 80px;
-    left: 10px;
-    top: 10px;
-    color: var(--main-text-color);
-    text-decoration: none;
-    font-size: 30px;
-    font-family: var(--secondary-font);
+    height: 60px;
 }
 
 .navbar-logo img{
@@ -51,12 +80,12 @@ body{
 }
 
 .navbar-list{
-    margin-top: 25px;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
     list-style: none;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .navbar-list li a{
@@ -74,40 +103,50 @@ body{
 
 
 
-#main-section{
-}
-
 #homeImage{
-    height: 400px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     background-image: url(../img/home-image.jpeg);
-    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 30%;
+    background-size: cover;
+    background-position: 50% 40%;
+    color: var(--secondary-text-color);
+    font-family: var(--secondary-font);
+    z-index: 1;
 }
 
-#hero{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: star;
-    gap: 10px;
-    height: 400px;
-    background-color: var(--main-color);
-    color: var(--main-text-color);
+#homeImage::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
 }
 
-#hero h1{
-    font-size: 60px;
+#homeTextContainer{
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
 }
 
-#hero p{
+#homeTitle{
+    margin: 0;
+    font-size: 120px;
+}
+
+#exploreLink{
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--secondary-text-color);
     font-size: 30px;
-    text-align: center;
-    width: 40vw;
+}
+
+#exploreLink:hover{
+    text-decoration: underline;
 }
 
 
 #dashboard{
-    height: 100%;
+    height: 100vh;
     width: 100vw;
 }
