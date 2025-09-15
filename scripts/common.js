@@ -63,3 +63,12 @@ export const convertDateStringToDisplay = (date) => {
 
     return `${day}${subscript} of ${month}`;
 }
+
+window.addEventListener("scroll", function () {
+        const body = document.body;
+        if (window.scrollY > 50) {
+            body.classList.add("scrolled");
+        } else {
+            body.classList.remove("scrolled");
+        }
+    });
