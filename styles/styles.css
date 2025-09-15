@@ -224,6 +224,35 @@ h1, h2, p{
 }
 
 
+
+#birthdaySection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-color: var(--secondary-color);
+}
+
+#birthdaySection h2 p{
+    color: var(--main-text-color);
+}
+
+#birthdaySection h2{
+    font-size: 30px;
+}
+
+#birthdaySection p{
+    font-size: 60px;
+}
+
+#birthdayContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
 @media (min-width: 2000px) {
     #tileContainer{
         grid-template-columns: 1fr 1fr 1fr;
