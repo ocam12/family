@@ -106,6 +106,8 @@ export const switchToLogIn = () => {
     getSignUpMenu().classList.add('hidden');
     getLogInMenu().classList.remove('hidden');
     getLoggedInMenu().classList.add('hidden');
+    
+    initialiseSignInPage();
 }
 
 export const switchToLoggedIn = () => {

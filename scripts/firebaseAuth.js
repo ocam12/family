@@ -10,6 +10,7 @@ export const authState = {
     currentUser: null
 };
 
+/*
 //track the currently logged-in user across pages
 onAuthStateChanged(auth, (user) => {        //changes current user when logs in
     const inAccountHTML = (window.location.pathname === '/account.html');
@@ -24,4 +25,33 @@ onAuthStateChanged(auth, (user) => {        //changes current user when logs in
     }
     if (inAccountHTML) initialiseSignInPage();
     addCheckToLockedLinks();
-});
+});*/
+
+export const handleUser = (user) => {
+    const inAccountHTML = (window.location.pathname === '/account.html');
+
+    if (user) {
+        authState.currentUser = user;
+        console.log("User is signed in:", authState.currentUser.email);
+        if (inAccountHTML){switchToLoggedIn();}
+    } else {
+        authState.currentUser = null;
+        console.log("No user signed in");
+        if (inAccountHTML) switchToLogIn();
+    }
+
+    if (inAccountHTML) initialiseSignInPage();
+    addCheckToLockedLinks();
+};
+
+
+export const getCurrentUser = () => {
+  return new Promise((resolve) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+        unsubscribe(); //stop listening for the initial load
+        resolve(user);
+    });
+  });
+};
+
+onAuthStateChanged(auth, handleUser); // runs handleUser whenever auth state changes

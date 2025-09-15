@@ -1,4 +1,5 @@
 import { addEvent } from "./common.js";
+import { initialiseCountdown } from "./countdown.js";
 import { authState } from "./firebaseAuth.js";
 
 const initialiseHomePage = () => {
@@ -10,6 +11,8 @@ const initialiseHomePage = () => {
             body.classList.remove("scrolled");
         }
     });
+
+    initialiseCountdown();
 }
 
 initialiseHomePage();

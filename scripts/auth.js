@@ -1,7 +1,7 @@
 import { authState } from "./firebaseAuth.js";
 import { auth, db } from "./firebaseConfig.js";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+import { doc, setDoc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 export async function signup(email, password, userName, birthday) {
     if (!email || !password || !userName || !birthday) {
@@ -13,7 +13,6 @@ export async function signup(email, password, userName, birthday) {
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCred.user;
 
-        // Optional: force token refresh
         await user.getIdToken(true);
 
         await setDoc(doc(db, "users", user.uid), {
@@ -21,6 +20,7 @@ export async function signup(email, password, userName, birthday) {
             birthday: birthday,
             profilePicURL: "",
         });
+        login(email, password);
 
         console.log("Signup successful:", user.uid);
     } catch (err) {
@@ -42,6 +42,36 @@ export async function logout(){
     try {
         await signOut(auth);
         authState.currentUser = null;
+    } catch (err){
+
+    }
+}
+
+export async function getUserProfile(uid){
+    try {
+        const userDocRef = doc(db, "users", uid);
+        const userSnapshot = await getDoc(userDocRef);
+        if (userSnapshot.exists()){
+            return userSnapshot.data();
+        }
+        else{
+            return null;
+        }
+    } catch (err){
+        console.log(err);
+    }
+}
+
+export async function getAllUserProfiles(){
+    try {
+        const usersCollection = collection(db, "users");
+        const usersSnapshot = await getDocs(usersCollection);
+        if (!usersSnapshot.empty){
+            return usersSnapshot.docs.map(doc => doc.data());
+        }
+        else{
+            return null;
+        }
     } catch (err){
 
     }
