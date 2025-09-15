@@ -1,3 +1,8 @@
+#accountMenus{
+    display: flex;
+    justify-content: center;
+}
+
 #accountMenus input{
     width: 350px;
     height: 30px;
@@ -19,6 +24,7 @@
 #accountMenus h2{
     font-size: 40px;
     width: 300px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -26,17 +32,17 @@
     width: 140px;
     height: 100px;
     font-size: 24px;
-    background-color: var(--tertiary-color-sand);
+    background-color: white;
     color: var(--main-text-color);
     border-radius: 40px;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
     margin-left: 20px;
     transition: 0.4s ease;
 }
 
 #accountMenus button:hover{
-    background-color: var(--tertiary-hover-color);
+    background-color: rgb(230, 230, 230);
 }
 
 #backToHomepage{
@@ -55,7 +61,8 @@
 .account-inputs-div{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+    gap: 30px;
 }
 
 .account-menu{
@@ -65,6 +72,10 @@
     justify-content: center;
     gap: 10px;
     margin-top: 20vh;
+    padding: 50px 50px;
+    border-radius: 40px;
+    border: 1px solid black;
+    background-color: var(--tertiary-color-sand);
 }
 
 #loggedInMenu h2{

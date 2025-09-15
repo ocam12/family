@@ -225,12 +225,8 @@ h1, h2, p{
 
 
 @media (min-width: 2000px) {
-    #dashboard{
-        height: 100%;
-    }
-
     #tileContainer{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: none;
     }
 

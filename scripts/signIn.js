@@ -1,10 +1,11 @@
 import { login, logout, signup } from "./auth.js";
-import { authState } from "./firebaseAuth.js";
 import { addEvent } from "./common.js";
 
 const signupPressed = () => {       //signup button pressed
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
+    const userName = document.getElementById('signupUserName').value;
+    const birthday = document.getElementById('signupBirthday').value;
 
     if (!checkEmail(email)){
         displayMessage('Please enter a valid email', 'error')
@@ -15,7 +16,7 @@ const signupPressed = () => {       //signup button pressed
         displayMessage(passwordResult.message, 'error')
     }
 
-    signup(email, password)
+    signup(email, password, userName, birthday);
 }
 
 const loginPressed = () => {       //login button pressed
@@ -66,16 +67,16 @@ const displayMessage = (message, type) => {
 export const initialiseSignInPage = async () => {
     //intialises signup and login buttons
     const signupButton = document.getElementById('signupButton');
-    if (signupButton){addEvent(signupButton, 'click', signupPressed, []);}
+    if (signupButton){resetAndInitialiseButton(signupButton, signupPressed, []);}
 
     const loginbutton = document.getElementById('loginButton');
-    if (loginbutton){addEvent(loginbutton, 'click', loginPressed, []);}
+    if (loginbutton){resetAndInitialiseButton(loginbutton, loginPressed, []);}
 
     const createAccountButton = document.getElementById('createAccountButton');
-    if (createAccountButton){addEvent(createAccountButton, 'click', switchToSignUp, []);}
+    if (createAccountButton){resetAndInitialiseButton(createAccountButton, switchToSignUp, []);}
 
     const gotAccountButton = document.getElementById('gotAccountButton');
-    if (gotAccountButton){addEvent(gotAccountButton, 'click', switchToLogIn, []);}
+    if (gotAccountButton){resetAndInitialiseButton(gotAccountButton, switchToLogIn, []);}
 
     const signupEmail = document.getElementById('signupEmail');
     if (signupEmail){addEvent(signupEmail, 'input', emailErrors, [signupEmail]);}
@@ -87,6 +88,12 @@ export const initialiseSignInPage = async () => {
     if (signOutButton){
         addEvent(signOutButton, 'click', logout, []);
     }
+}
+
+const resetAndInitialiseButton = (button, func, params) => {
+    const clone = button.cloneNode(true);
+    addEvent(clone, 'click', func, [...params]);
+    button.replaceWith(clone);
 }
 
 const switchToSignUp = () => {
