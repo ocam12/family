@@ -18,7 +18,7 @@ const findNearestBirthday = async () => {
         const [year, month, day] = u.birthday.split('-').map(Number);
 
         let nextBday = new Date(todaysDate.getFullYear(), month - 1, day);
-        if (nextBday < todaysDate){
+        if (nextBday < todaysDate.setDate(todaysDate.getDate() - 1)){
             nextBday.setFullYear(todaysDate.getFullYear() + 1);
         }
         return {
@@ -37,6 +37,12 @@ const findNearestBirthday = async () => {
 
 const setCountdown = (usersBdays) => {
     const nextBday = document.getElementById('nextBday');
+    const countdownObj = document.getElementById("countdown");
+    if (usersBdays.birthday === convertDateToString(new Date())){
+        nextBday.innerText = `Happy Birthday ${usersBdays.userName}!`
+        countdownObj.innerText = '00:00:00:00';
+        return;
+    }
     nextBday.innerText = `${usersBdays.userName} on the ${convertDateStringToDisplay(usersBdays.birthday)}!`;
 
     const targetDate = new Date(usersBdays.birthday); // your next birthday Date object
@@ -69,7 +75,7 @@ const setCountdown = (usersBdays) => {
             String(minutes).padStart(2, "0") + ":" +
             String(seconds).padStart(2, "0");
 
-        document.getElementById("countdown").innerText = formatted;
+        countdownObj.innerText = formatted;
     }
 
     updateCountdown(); // run once immediately

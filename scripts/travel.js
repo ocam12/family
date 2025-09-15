@@ -21,7 +21,6 @@ const initialiseTravel = async () => {
         const { lat, lng } = e.latlng;
         createPin(map, lat, lng, userName);
     });
-
 }
 
 initialiseTravel();
