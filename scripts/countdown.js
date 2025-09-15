@@ -26,7 +26,6 @@ const findNearestBirthday = async () => {
             birthday: convertDateToString(nextBday)
         }
     });
-    
 
     const nearest = usersUpcomingBdays.reduce((prev, curr) => {
         return curr.birthday < prev.birthday ? curr : prev;

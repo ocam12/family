@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel</title>
+        <link rel = "stylesheet" href = "styles/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+    <body>
+        <div class = "navbar-container">
+            <div class = "navbar-border">
+                <nav class = "navbar">
+                    <a href = "index.html" class = "navbar-logo"><img src = "img/young-family-crest.png"></a>
+                    <ul class = "navbar-list">
+                        <li><a href = "index.html">Home</a></li>
+                        <li><a href = "" class = "locked-link">Gallery</a></li>
+                        <li><a href = "" class = "locked-link">Calendar</a></li>
+                        <li><a href = "" class = "locked-link">Family Tree</a></li>
+                        <li><a href = "account.html" id = "accountNavLink">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <section id = "mapSection">
+            <h1>The Young Travel Map</h1>
+            <p>See where everyone else has been or add your own travel adventure by clicking on the map below</p>
+            <div id="map" style="height: 600px; width: 100%;"></div>
+            <div id = "leaderboardContainer">
+                <div id = "first" class = "leaderboard-card">
+                    <h1>1st</h1>
+                    <p>Jon</p>
+                    <p>27 pins</p>
+                </div>
+                <div id = "second" class = "leaderboard-card">
+                    <h1>2nd</h1>
+                    <p>Clare</p>
+                    <p>22 pins</p>
+                </div>
+                <div id = "third" class = "leaderboard-card">
+                    <h1>3rd</h1>
+                    <p>Oliver</p>
+                    <p>12 pins</p>
+                </div>
+            </div>
+        </section>
+
+        <script type = "module" src = "scripts/travel.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    </body>
+</html>
