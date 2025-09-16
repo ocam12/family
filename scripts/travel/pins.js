@@ -1,5 +1,5 @@
 import { doc, getDocs, addDoc, deleteDoc, serverTimestamp, collection } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-import { db } from "./firebaseConfig.js";
+import { db } from "../account/firebaseConfig.js";
 
 const redIcon = L.icon({
     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',

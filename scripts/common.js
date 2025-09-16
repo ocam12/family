@@ -1,4 +1,4 @@
-import { authState } from "./firebaseAuth.js";
+import { authState } from "./account/firebaseAuth.js";
 
 export const addEvent = (item, action, func, params = []) => {      //shortcut for adding events to elements
     item.addEventListener(action, () => {
@@ -13,9 +13,10 @@ export const addCheckToLockedLinks = () => {
             if (!authState.currentUser) {
                 alert("We can't let you in until you log in first!");
                 e.preventDefault();         //prevent any default action - here stops the href
+                /*
                 if (window.location.pathname !== '/account.html') {
                     window.location.href = './account.html'; //redirects to account page
-                }
+                }*/
             }
         });
     });

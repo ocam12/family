@@ -1,5 +1,5 @@
 import { login, logout, signup } from "./auth.js";
-import { addEvent } from "./common.js";
+import { addEvent } from "../common.js";
 
 const signupPressed = () => {       //signup button pressed
     const email = document.getElementById('signupEmail').value;

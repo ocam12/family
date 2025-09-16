@@ -1,11 +1,11 @@
 #mapSection{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     height: 95vh;
-    padding: 70px 20px 0px 20px;
-    background-image: linear-gradient(225deg, var(--tertiary-color-blue), var(--tertiary-color-sand));
+    padding: 140px 20px 0px 20px;
+    background-image: linear-gradient(225deg, white, var(--tertiary-color-blue));
 }
 
 #mapSection h1{

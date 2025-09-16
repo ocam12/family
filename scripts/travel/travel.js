@@ -1,5 +1,5 @@
-import { getUserProfile } from "./auth.js";
-import { getCurrentUser } from "./firebaseAuth.js";
+import { getUserProfile } from "../account/auth.js";
+import { getCurrentUser } from "../account/firebaseAuth.js";
 import { createPin, loadPins } from "./pins.js";
 
 const initialiseTravel = async () => {

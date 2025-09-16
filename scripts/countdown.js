@@ -1,6 +1,6 @@
-import { getAllUserProfiles, getUserProfile } from "./auth.js";
+import { getAllUserProfiles, getUserProfile } from "./account/auth.js";
 import { convertDateStringToDisplay, convertDateToString } from "./common.js";
-import { getCurrentUser } from "./firebaseAuth.js"
+import { getCurrentUser } from "./account/firebaseAuth.js"
 
 export const initialiseCountdown = async () => {
     const user = await getCurrentUser();
