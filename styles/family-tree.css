@@ -1,0 +1,9 @@
+#treeSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    padding: 140px 20px 0px 20px;
+    background-image: linear-gradient(315deg, white, var(--tertiary-color-sand));
+}

@@ -1,11 +1,12 @@
 @import url('account.css');
 @import url('travel.css');
+@import url('family-tree.css');
 
 :root{
     --main-color: #fffddd;
     --secondary-color: rgba(255, 253, 242, 0.95);
     --tertiary-color-blue: rgb(210, 245, 255);
-    --tertiary-color-sand: rgb(255, 241, 165);
+    --tertiary-color-sand: rgb(255, 249, 214);
     --tertiary-hover-color: rgb(232, 220, 149);
     --main-text-color: #171717;
     --secondary-text-color: #fffce1;
@@ -26,7 +27,7 @@ body{
     margin: 0;
 }
 
-h1, h2, p{
+h1, h2, h3, h4, h5, p{
     margin: 0;
 }
 

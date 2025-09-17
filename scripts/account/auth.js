@@ -19,6 +19,7 @@ export async function signup(email, password, userName, birthday) {
             userName: userName,
             birthday: birthday,
             profilePicURL: "",
+            pinColour: '',
         });
         login(email, password);
 

@@ -6,7 +6,8 @@ const initialiseTravel = async () => {
     const user = await getCurrentUser();
     if (!user){return;}
 
-    const userName = (await getUserProfile(user.uid)).userName;
+    const userObj = (await getUserProfile(user.uid));
+    const userName = userObj.userName;
     const map = L.map('map').setView([20, 0], 2); //create centered world map
 
     //Add base tiles
@@ -19,7 +20,7 @@ const initialiseTravel = async () => {
     //add on click event that places marker
     map.on('click', function (e) {
         const { lat, lng } = e.latlng;
-        createPin(map, lat, lng, userName);
+        createPin(map, lat, lng, userName, userObj.pinColour);
     });
 }
 

@@ -28,6 +28,24 @@
     box-shadow: 8px 12px rgba(128, 128, 128, 0.2);
 }
 
+.delete-pin{
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.delete-pin:hover{
+    background-color: rgb(200, 200, 200);
+}
+
+.delete-pin:active{
+    background-color: rgb(180, 180, 180);
+}
+
 #leaderboardContainer{
     display: flex;
     gap: 100px;
