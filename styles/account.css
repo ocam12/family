@@ -6,8 +6,9 @@
 #accountMenus input{
     width: 350px;
     height: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     border-radius: 50px;
-    border: 1px solid grey;
+    border: 1px solid #ccc;
     padding: 6px 14px;
     font-size: 20px;
 }
@@ -22,34 +23,46 @@
 }
 
 #accountMenus h2{
-    font-size: 40px;
-    width: 300px;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--main-text-color);
+    margin-bottom: 40px;
     margin-bottom: 50px;
     text-align: center;
 }
 
-#accountMenus button{
+#signupButton, #loginButton{
     width: 140px;
-    height: 100px;
+    height: 60px;
     font-size: 24px;
     background-color: white;
     color: var(--main-text-color);
+    border: none;
     border-radius: 40px;
-    border: 1px solid black;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     cursor: pointer;
     margin-left: 20px;
     transition: 0.4s ease;
 }
 
-#accountMenus button:hover{
-    background-color: rgb(230, 230, 230);
+#createAccountButton, #gotAccountButton, #signOutButton{
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: white;
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    margin-left: 20px;
+    transition: 0.4s ease;
 }
 
-#backToHomepage{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-top: 20px;
+
+#signupButton:hover, #loginButton:hover, #createAccountButton:hover, #gotAccountButton:hover, #signOutButton:hover{
+    background-color: rgb(240, 240, 240);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .account-div{
@@ -75,6 +88,7 @@
     padding: 50px 50px;
     border-radius: 40px;
     border: 1px solid black;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     background-color: var(--tertiary-color-sand);
 }
 
@@ -94,29 +108,6 @@
 }
 #messageP.success{
     color: rgb(0, 134, 22);
-}
-
-#createAccountButton{
-    margin-top: 50px;
-    width: 200px !important;
-    height: 50px !important;
-    font-size: 20px !important;
-    background-color: rgb(230, 230, 230) !important;
-    color: black !important;
-}
-
-#gotAccountButton{
-    margin-top: 50px;
-    width: 300px !important;
-    height: 50px !important;
-    font-size: 20px !important;
-    background-color: rgb(230, 230, 230) !important;
-    color: black !important;
-}
-
-#signOutButton{
-    height: 50px !important;
-    margin: 0 !important;
 }
 
 @media (max-width: 600px){

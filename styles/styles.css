@@ -25,6 +25,8 @@ body{
     font-family: var(--main-font);
     padding: 0;
     margin: 0;
+    background: linear-gradient(90deg, #e6fff9, #f1fffb);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1, h2, h3, h4, h5, p{
@@ -63,18 +65,19 @@ h1, h2, h3, h4, h5, p{
     justify-content: center;
     align-items: center;
     background-image: url(../img/seamless-pattern-of-scottish-tartan-plaid-repeatable-background-with-check-fabric-texture-backdrop-striped-textile-print-vector.jpg);
-    background-size: 15%;
+    background-size: 25%;
     border-radius: 100px;
-    width: 700px;
-    height: 75px;
+    width: 452px;
+    height: 79px;
 }
 
 .navbar{
     padding-left: 20px;
+    padding-bottom: 2px;
     display: flex;
     justify-content: start;
     align-items: center;
-    width: 668px;
+    width: 420px;
     height: 65px;
     border-radius: 100px;
     background-color: var(--secondary-color);
